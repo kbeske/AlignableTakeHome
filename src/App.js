@@ -1,28 +1,41 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import { changeIPTaskName, changeIPTaskCategory, changeIPTaskUrgency,
+  resetIPTask, addTaskToList, removeTask, urgency, category }
+  from './Reducers.js';
 
-class App extends Component {
+const clickCreate = () => {
+  addTaskToList();
+  resetIPTask();
+}
+
+class TaskManager extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className="tasks">
+        <div className="task-maker">
+          Task Maker
+          <input
+            className="create-task name"
+            placeholder="Task Name"
+            onChange={changeIPTaskName}
+          />
+          <div className="create-task name">
+          Category
+          </div>
+          <div className="create-task name">
+          Urgency
+          </div>
+          <button className="create-task button" onClick={clickCreate}>
+            Create
+          </button>
+        </div>
+        <div className="task-list">
+        task list placeholder text
+        </div>
       </div>
     );
   }
 }
 
-export default App;
+export default TaskManager;

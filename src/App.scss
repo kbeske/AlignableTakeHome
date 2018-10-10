@@ -1,0 +1,52 @@
+@import './Variables.scss';
+
+$maker-contents-width: 250px;
+$maker-contents-border-radius: 3px;
+$maker-contents-margin: 15px;
+$maker-contents-padding: 7px;
+$border-width: 1px;
+
+.tasks {
+  background-color: $background;
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.task-maker {
+  width: 300px;
+  height: 350px;
+  background-color: $white;
+  border-radius: 10px;
+  border: $border-width solid $card-border;
+  font-size: $title-font-size;
+  margin: 25px;
+  padding: 10px;
+}
+
+.create-task {
+  width: $maker-contents-width;
+  border-radius: $maker-contents-border-radius;
+  border: $border-width solid $input-border;
+  font-size: $standard-font-size;
+  margin: $maker-contents-margin;
+  padding: $maker-contents-padding;
+}
+
+.button {
+  width: $maker-contents-width;
+  background-color: $add-button-fill;
+  border-radius: $maker-contents-border-radius;
+  border: $border-width solid $add-button-border;
+  font-size: $standard-font-size;
+  margin: $maker-contents-margin;
+  padding: $maker-contents-padding;
+  color: $white;
+}
+
+
+@media (max-width: $mobile-screen-size) {
+  .task-maker {
+    width: 100%;
+  }
+}
